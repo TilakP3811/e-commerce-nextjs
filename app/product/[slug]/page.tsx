@@ -1,12 +1,8 @@
 import AddToBag from "@/components/AddToBag";
-// import CheckoutNow from "@/app/components/CheckoutNow";
-// import ImageGallery from "@/app/components/ImageGallery";
 import { fullProduct } from "@/lib/interface";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
-import { Star, Truck } from "lucide-react";
 import ImageGallery from "@/components/ImageGallery";
-import CheckoutNow from "@/components/CheckOutNow";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -68,17 +64,8 @@ export default async function ProductPge({
                 key={data._id}
                 price_id={data.price_id}
               >
-                <Button>Add to cart</Button>
+                <Button style={{ width: "100%" }}>Add To Cart</Button>
               </AddToBag>
-              <CheckoutNow
-                currency="USD"
-                description={data.description}
-                image={data.imageUrl}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              />
             </div>
           </div>
         </div>

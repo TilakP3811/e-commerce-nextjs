@@ -33,6 +33,7 @@ export default function AddToBag({
     image: urlFor(image).url(),
     price_id: price_id,
   };
+
   return (
     <div
       onClick={() => {
