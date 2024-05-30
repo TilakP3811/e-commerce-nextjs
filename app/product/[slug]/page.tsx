@@ -3,6 +3,7 @@ import { fullProduct } from "@/lib/interface";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import ImageGallery from "@/components/ImageGallery";
+import RandomProducts from "@/components/RandomProducts";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -69,6 +70,7 @@ export default async function ProductPge({
             </div>
           </div>
         </div>
+        <RandomProducts />
       </div>
     </div>
   );

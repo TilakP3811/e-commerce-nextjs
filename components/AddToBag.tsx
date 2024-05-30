@@ -38,7 +38,6 @@ export default function AddToBag({
     <div
       onClick={() => {
         addItem(product);
-        handleCartClick();
       }}
     >
       {children}
